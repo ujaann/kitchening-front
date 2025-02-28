@@ -5,7 +5,7 @@ export const Register = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full">
       <div>
-        <img src={Logo} />
+        <img src={Logo} className="max-sm:hidden"/>
       </div>
       <div className="w-2/5 flex flex-col border-2 p-8 rounded gap-2 shadow-lg  mx-14 mt-4 my-14 sm:m-4">
         <div>Register</div>

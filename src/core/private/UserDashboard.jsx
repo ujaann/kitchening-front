@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Profile from './user/Profile';
-import YourRecipes from './user/YourRecipes';
-import Settings from './user/Settings';
 import Sidebar from '../global/Sidebar';
 
 const UserDashboard = () => {

@@ -2,7 +2,18 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        papayaWhip: '#ffefd3',
+        peach: '#ffc49b',
+        caribeanCurrent: '#00798c',
+        emerald: '#06d6a0',
+        spaceCadet: '#141b41',
+      },
+      textColor: {
+        DEFAULT: '#141b41', // Set spaceCadet as the default text color
+      },
+    },
   },
   plugins: [
     require('daisyui'),

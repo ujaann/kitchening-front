@@ -21,6 +21,11 @@ function App() {
 
   //Todo: logic login
   const isAuthenticated = false;
+//   const papayaWhip = Color(0xffffefd3);
+// const peach = Color(0xffffc49b);
+// const caribeanCurrent = Color(0xff00798c);
+// const emerald = Color(0xff06d6a0);
+// const spaceCadet = Color(0xff141b41);
 
   const routes = isAuthenticated ? privateRoutes : publicRoutes;
 

@@ -1,19 +1,32 @@
 import React from "react";
+import { User, Plus, Heart, Settings } from "lucide-react";
 
 const Sidebar = () => {
   return (
-    <ul className="menu  pt-2 w-80 bg-base-100 min-h-full text-base-content">
+    <ul className="menu pt-2 w-80 bg-base-100 min-h-full text-base-content">
       <li className="flex">
-        <a>Profile</a>
+        <a>
+          <User />
+          Profile
+        </a>
       </li>
       <li className="flex">
-        <a>Create Recipe</a>
+        <a>
+          <Plus />
+          Create Recipe
+        </a>
       </li>
       <li className="flex">
-        <a>Your Favourites</a>
+        <a>
+          <Heart />
+          Your Favourites
+        </a>
       </li>
       <li className="flex">
-        <a>Settings</a>
+        <a>
+          <Settings />
+          Settings
+        </a>
       </li>
     </ul>
   );

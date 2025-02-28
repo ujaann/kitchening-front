@@ -17,7 +17,7 @@ export const Home = () => {
   };
   return (
     <>
-      <div className="p-2">
+      <div className="p-2 bg-peach">
         <Hero
           image="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
           title="Pizza Mozzarella"
