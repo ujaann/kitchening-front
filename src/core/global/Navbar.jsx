@@ -1,9 +1,20 @@
 import { AlignJustify } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const TopBar = () => {
+  const { authInfo, logout } = useContext(AuthContext);
+  
+  
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <div className="navbar bg-caribeanCurrent text-white">
       <div className="navbar-start">
@@ -16,9 +27,6 @@ const TopBar = () => {
             className="menu menu-sm text-spaceCadet dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link to="/popular">Popular</Link>
-            </li>
-            <li>
               <details>
                 <summary>Cuisine</summary>
                 <ul className="p-2">
@@ -26,19 +34,22 @@ const TopBar = () => {
                     <Link to="/cuisine/nepali">Nepali</Link>
                   </li>
                   <li>
-                    <Link to="/cuisine/submenu-2">Submenu 2</Link>
+                    <Link to="/cuisine/chinese">Chinese</Link>
+                  </li>
+                  <li>
+                    <Link to="/cuisine/thai">Thai</Link>
+                  </li>
+                  <li>
+                    <Link to="/cuisine/nepakorean">Korean</Link>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <Link to="/dinner">Dinner</Link>
+              <Link to="/allRecipe">All Recipes</Link>
             </li>
             <li>
-              <Link to="/meal">Meal</Link>
-            </li>
-            <li>
-              <Link to="/beverages">Beverages</Link>
+              <Link to="/favourites">Favourites</Link>
             </li>
           </ul>
         </div>
@@ -50,9 +61,6 @@ const TopBar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/popular">Popular</Link>
-          </li>
-          <li>
             <details>
               <summary>Cuisine</summary>
               <ul className="p-2 text-spaceCadet">
@@ -60,41 +68,32 @@ const TopBar = () => {
                   <Link to="/cuisine/nepali">Nepali</Link>
                 </li>
                 <li>
-                  <Link to="/cuisine/submenu-2">Submenu 2</Link>
+                  <Link to="/cuisine/chinese">Chinese</Link>
+                </li>
+                <li>
+                  <Link to="/cuisine/thai">Thai</Link>
+                </li>
+                <li>
+                  <Link to="/cuisine/nepakorean">Korean</Link>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <Link to="/dinner">Dinner</Link>
+            <Link to="/allRecipe">All Recipes</Link>
           </li>
           <li>
-            <Link to="/meal">Meal</Link>
-          </li>
-          <li>
-            <Link to="/beverages">Beverages</Link>
+            <Link to="/favourites">Favourites</Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </button>
         <div className="dropdown dropdown-end">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar"
+          >
             <div className="w-10 rounded-full">
               <img
                 alt="Profile"
@@ -106,21 +105,26 @@ const TopBar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content text-spaceCadet bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-            <li>
-              <Link to="/your-recipes">Your Recipes</Link>
-            </li>
-            <li>
-              <Link to="/create-recipe">Create a Recipe</Link>
-            </li>
-            <li>
-              <Link to="/settings">Settings</Link>
-            </li>
-            <li>
-              <Link to="/logout">Logout</Link>
-            </li>
+            {authInfo.token ? (
+              <>
+                <li>
+                  <Link to="/profile">Profile</Link>
+                </li>
+                <li>
+                  <Link to="/your-recipes">Your Recipes</Link>
+                </li>
+                <li>
+                  <Link to="/create-recipe">Create a Recipe</Link>
+                </li>
+                <li>
+                  <a onClick={handleLogout}>Logout</a>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
       </div>

@@ -9,7 +9,7 @@ import React, { Component } from "react";
  */
 export const Hero = ({ image, title, desc, action }) => {
   return (
-    <div className="hero bg-base-200 min-h-96">
+    <div className="hero bg-papayaWhip min-h-96">
       <div className="hero-content flex-col lg:flex-row z-auto">
         <div className="w-[50%] lg:w-full">
         <img
@@ -25,7 +25,7 @@ export const Hero = ({ image, title, desc, action }) => {
           <p className="py-6">
             {desc}
           </p>
-          <button className="btn btn-primary" onClick={action}>Get Started</button>
+          <button className="btn bg-caribeanCurrent text-white" onClick={action}>Get Started</button>
         </div>
       </div>
     </div>
