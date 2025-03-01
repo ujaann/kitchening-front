@@ -1,4 +1,5 @@
-import { AlignJustify, HamIcon } from "lucide-react";
+import { AlignJustify } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import React from "react";
 
@@ -15,65 +16,63 @@ const TopBar = () => {
             className="menu menu-sm text-spaceCadet dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Popular</a>
+              <Link to="/popular">Popular</Link>
             </li>
             <li>
-              <a>Cuisine</a>
-              <ul className="p-2">
-                <li>
-                  <a>Nepali</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
+              <details>
+                <summary>Cuisine</summary>
+                <ul className="p-2">
+                  <li>
+                    <Link to="/cuisine/nepali">Nepali</Link>
+                  </li>
+                  <li>
+                    <Link to="/cuisine/submenu-2">Submenu 2</Link>
+                  </li>
+                </ul>
+              </details>
             </li>
             <li>
-              <a>Dinner</a>
+              <Link to="/dinner">Dinner</Link>
             </li>
             <li>
-              <a>Meal</a>
+              <Link to="/meal">Meal</Link>
             </li>
             <li>
-              <a>Beverage</a>
+              <Link to="/beverages">Beverages</Link>
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">
-          <img height="36" width="36" src={logo} />
-          <div className="max-sm:hidden">
-
-          Kitchening
-          </div>
-        </a>
+        <Link to="/" className="btn btn-ghost text-xl">
+          <img height="36" width="36" src={logo} alt="Logo" />
+          <div className="max-sm:hidden">Kitchening</div>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1  ">
+        <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Popular</a>
+            <Link to="/popular">Popular</Link>
           </li>
           <li>
-            <details className="">
+            <details>
               <summary>Cuisine</summary>
-              {/* TODO: Add some cuisines here to show  */}
-              <ul className="p-2">
+              <ul className="p-2 text-spaceCadet">
                 <li>
-                  <a>Nepali</a>
+                  <Link to="/cuisine/nepali">Nepali</Link>
                 </li>
                 <li>
-                  <a>Submenu 2</a>
+                  <Link to="/cuisine/submenu-2">Submenu 2</Link>
                 </li>
               </ul>
             </details>
-          </li>{" "}
-          <li>
-            <a>Dinner</a>
           </li>
           <li>
-            <a>Meal</a>
+            <Link to="/dinner">Dinner</Link>
           </li>
           <li>
-            <a>Beverages</a>
+            <Link to="/meal">Meal</Link>
+          </li>
+          <li>
+            <Link to="/beverages">Beverages</Link>
           </li>
         </ul>
       </div>
@@ -95,14 +94,10 @@ const TopBar = () => {
           </svg>
         </button>
         <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img
-                alt="Tailwind CSS Navbar component"
+                alt="Profile"
                 src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
               />
             </div>
@@ -112,19 +107,19 @@ const TopBar = () => {
             className="menu menu-sm dropdown-content text-spaceCadet bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+              <Link to="/profile">Profile</Link>
             </li>
             <li>
-              <a>Your Recipes</a>
+              <Link to="/your-recipes">Your Recipes</Link>
             </li>
             <li>
-              <a>Settings</a>
+              <Link to="/create-recipe">Create a Recipe</Link>
             </li>
             <li>
-              <a>Logout</a>
+              <Link to="/settings">Settings</Link>
+            </li>
+            <li>
+              <Link to="/logout">Logout</Link>
             </li>
           </ul>
         </div>

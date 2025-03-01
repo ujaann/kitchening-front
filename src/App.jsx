@@ -1,14 +1,13 @@
 import React from "react";
-// import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Home } from "./core/public/Home";
 import { Login } from "./core/public/Login";
 import { AuthProvider } from "./core/context/AuthContext";
-
 import { Register } from "./core/public/Register";
 import UserDashboard from "./core/private/UserDashboard";
 import TopBar from "./core/global/Navbar";
+import SingleRecipe from "./core/public/SingleRecipe";
 
 function App() {
   const privateRoutes = [];
@@ -16,24 +15,24 @@ function App() {
     { path: "/", element: <Home /> },
     { path: "/login", element: <Login /> },
     { path: "/register", element: <Register /> },
-    {path:"/dashboard",element:<UserDashboard/>},
+    
+    { path: "/recipe/:recipeId", element: <SingleRecipe /> },
   ];
 
-  //Todo: logic login
   const isAuthenticated = false;
-//   const papayaWhip = Color(0xffffefd3);
-// const peach = Color(0xffffc49b);
-// const caribeanCurrent = Color(0xff00798c);
-// const emerald = Color(0xff06d6a0);
-// const spaceCadet = Color(0xff141b41);
-
-  const routes = isAuthenticated ? privateRoutes : publicRoutes;
+  const routes = isAuthenticated ? privateRoutes.concat(publicRoutes) : publicRoutes;
 
   return (
     <>
       <AuthProvider>
-        <TopBar/>
-        <RouterProvider router={createBrowserRouter(routes)} />
+        <BrowserRouter>
+          <TopBar />
+          <Routes>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Child1 from "./Child1";
+// import Child1 from "./Child1";
 import { useForm } from "react-hook-form";
 
 import { Card } from "../../components/Card";
@@ -23,24 +23,24 @@ export const Home = () => {
           title="Pizza Mozzarella"
           desc="Newest Arrival for ujans food "
         />
-        <h1>Breakfast</h1>
+        <h1 className="px-4 pt-4 text-2xl font-semibold">Breakfast</h1>
         <div className="flex p-4 gap-6">
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Card 1" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 1" />
+          <Card title="Card 2" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 2" />
+          <Card title="Card 3" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 3" />
         </div>
-        <h1>Community Favourites</h1>
+        <h1 className="px-4 pt-4 text-2xl font-semibold">Community Favourites</h1>
         <div className="flex p-4 gap-6">
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Card 4" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 4" />
+          <Card title="Card 5" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 5" />
+          <Card title="Card 6" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 6" />
         </div>
 
-        <h1>Your Favourites</h1>
+        <h1 className="px-4 pt-4 text-2xl font-semibold">Your Favourites</h1>
         <div className="flex p-4 gap-6">
-          <Card />
-          <Card />
-          <Card />
+          <Card title="Card 7" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 7" />
+          <Card title="Card 8" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 8" />
+          <Card title="Card 9" image="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp" author="Author 9" />
         </div>
       </div>
     </>
