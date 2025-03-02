@@ -132,7 +132,7 @@ const { authInfo: { userId, username,token } } = useContext(AuthContext);
               <option value="Italian">Italian</option>
               <option value="Chinese">Chinese</option>
               <option value="Thai">Thai</option>
-              <option value="Japanese">American</option>
+              <option value="American">American</option>
             </select>
           </div>
 

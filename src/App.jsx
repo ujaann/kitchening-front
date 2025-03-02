@@ -11,10 +11,12 @@ import { AllRecipe } from "./core/public/AllRecipe";
 import NotFound from "./core/public/NotFound";
 import { Favourites } from "./core/private/Favourites";
 import { CreateRecipe } from "./core/private/CreateRecipe";
+import YourRecipes from "./core/private/YourRecipes";
 
 function App() {
   const privateRoutes = [
     { path: "/favourites", element: <Favourites /> },
+    { path: "/your-recipes", element: <YourRecipes /> },
     { path: "/create-recipe", element: <CreateRecipe /> },
     
   ];

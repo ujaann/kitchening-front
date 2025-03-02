@@ -54,7 +54,7 @@ export const AllRecipe = () => {
 
   console.log(recipes);
   return (
-    <div className="sm:p-20 bg-peach h-screen">
+    <div className="sm:p-20 bg-peach min-h-screen max-h-full">
       <ToastContainer />
       <div className="bg-papayaWhip rounded-box shadow-md p-4">
         <div className="p-4 pb-2 text-lg opacity-60 tracking-wide">
