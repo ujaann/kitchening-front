@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Home } from "./core/public/Home";
 import { Login } from "./core/public/Login";
-import { AuthProvider } from "./core/context/AuthContext";
+import { AuthContext, AuthProvider } from "./core/context/AuthContext";
 import { Register } from "./core/public/Register";
 import TopBar from "./core/global/Navbar";
 import SingleRecipe from "./core/public/SingleRecipe";
@@ -24,14 +24,14 @@ function App() {
     { path: "/allRecipe/", element: <AllRecipe /> },
     { path: "/recipe/:recipeId", element: <SingleRecipe /> },
   ];
-
-  const isAuthenticated = false;
+  const { authInfo } = useContext(AuthContext);
+  const isAuthenticated = authInfo.token?true:false;
   const routes = isAuthenticated ? privateRoutes.concat(publicRoutes) : publicRoutes;
   console.log(routes);
   
   return (
     <>
-      <AuthProvider>
+
         <BrowserRouter>
           <TopBar />
           <Routes>
@@ -41,7 +41,7 @@ function App() {
             <Route path="*" element={<NotFound />} /> {/* Add this line */}
           </Routes>
         </BrowserRouter>
-      </AuthProvider>
+      
     </>
   );
 }

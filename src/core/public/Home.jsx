@@ -19,7 +19,7 @@ export const Home = () => {
     <>
       <div className="p-2 bg-peach">
         <Hero
-          image="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+          image="http://localhost:5000/api/recipe/getRecipeImage/IMG-1740724645007.jpg"
           title="Pizza Mozzarella"
           desc="Newest Arrival for ujans food "
         />

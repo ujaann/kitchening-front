@@ -9,11 +9,11 @@ export const Card = ({ title, image, author,id }) => {
                     src={image}
                     alt="Album" />
             </figure>
-            <div className="card-body">
+            <div className="bg-caribeanCurrent text-white card-body">
                 <h2 className="card-title">{title}</h2>
                 <p>Made By: {author}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-circle">
+                    <button className="btn btn-circle bg-papayaWhip">
                         <ArrowRight/>
                     </button>
                 </div>
