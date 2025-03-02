@@ -60,6 +60,7 @@ export const AllRecipe = () => {
           recipes.map((recipe) => (
            <Card
            key={recipe._id}  // ✅ Use _id instead of id
+           id={recipe._id}  // ✅ Use _id instead of id
            title={recipe.title}
            author={recipe.author.username}  // ✅ Use author.username
            image={`http://localhost:5000/api/recipe/getRecipeImage/${recipe.image}`}  // ✅ Make sure image URL exists in API response

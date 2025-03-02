@@ -10,10 +10,12 @@ import SingleRecipe from "./core/public/SingleRecipe";
 import { AllRecipe } from "./core/public/AllRecipe";
 import NotFound from "./core/public/NotFound";
 import { Favourites } from "./core/private/Favourites";
+import { CreateRecipe } from "./core/private/CreateRecipe";
 
 function App() {
   const privateRoutes = [
     { path: "/favourites", element: <Favourites /> },
+    { path: "/create-recipe", element: <CreateRecipe /> },
     
   ];
   const publicRoutes = [

@@ -1,13 +1,22 @@
-import React, { Component } from "react";
+import { Heart } from "lucide-react";
+import React from "react";
+import { useNavigate } from 'react-router-dom';
+
 /**
  * 
  * @param {String} image enter image path or smth
  * @param {String} title enter hero title
  * @param {String} desc enter hero description try to keep it to max 3 lines
- * @param {Function} action somekind of function to call
+ * @param {String} id enter recipe id
  * @returns {Component}
  */
-export const Hero = ({ image, title, desc, action }) => {
+export const Hero = ({ image, title, desc, id }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/recipe/${id}`);
+  };
+
   return (
     <div className="hero bg-papayaWhip min-h-96">
       <div className="hero-content flex-col lg:flex-row z-auto">
@@ -22,10 +31,10 @@ export const Hero = ({ image, title, desc, action }) => {
         </div>
         <div>
           <h1 className="text-5xl font-bold">{title}</h1>
-          <p className="py-6">
-            {desc}
+          <p className="py-6 flex text-lg font-semibold items-center gap-3">
+            {desc} <Heart className="size-10"/>
           </p>
-          <button className="btn bg-caribeanCurrent text-white" onClick={action}>Get Started</button>
+          <button className="btn bg-caribeanCurrent text-white" onClick={handleClick}>Get Started</button>
         </div>
       </div>
     </div>

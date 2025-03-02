@@ -51,6 +51,7 @@ export const Favourites = () => {
             recipes.map((recipe) => (
               <Card
                 key={recipe._id}
+                id={recipe._id}
                 title={recipe.title}
                 author={recipe.author.username}
                 image={`http://localhost:5000/api/recipe/getRecipeImage/${recipe.image}`}

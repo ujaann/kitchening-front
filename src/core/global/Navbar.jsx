@@ -107,9 +107,9 @@ const TopBar = () => {
             {authInfo.token ? (
               <>
                 <li>
-                  <Link to="/profile">
+                  <a >
                   <span className="badge"> {authInfo.username} </span>
-                 Your Profile</Link>
+                 Your Profile</a>
                 </li>
                 <li>
                   <Link to="/your-recipes">Your Recipes</Link>
