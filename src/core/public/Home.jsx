@@ -32,8 +32,12 @@ export const Home = () => {
           if (!yourFavouritesResponse.ok) {
             throw new Error("Network response was not ok");
           }
+          console.log(yourFavouritesResponse);
           const yourFavouritesData = await yourFavouritesResponse.json();
-          yourFavouritesData.sort((a, b) => b.likeCount - a.likeCount);
+          console.log(yourFavouritesData);
+          
+
+          
           setYourFavourites(yourFavouritesData);
         }
         let communityFavouritesData = await communtiyResponse.json();
@@ -84,7 +88,7 @@ export const Home = () => {
               key={recipe._id}
               id={recipe._id}
               title={recipe.title}
-              author={recipe.author.username}
+              // author={recipe.author.username}
               image={`http://localhost:5000/api/recipe/getRecipeImage/${recipe.image}`}
             />
           ))}
@@ -98,7 +102,7 @@ export const Home = () => {
               key={recipe._id}
               id={recipe._id}
               title={recipe.title}
-              author={recipe.author.username}
+              // author={recipe.author.username}
               image={`http://localhost:5000/api/recipe/getRecipeImage/${recipe.image}`}
             />
           ))}
@@ -107,13 +111,12 @@ export const Home = () => {
           <>
             <h1 className="px-4 pt-4 text-2xl font-semibold">Your Favourites</h1>
             <div className="flex p-4 gap-6">
-              {yourFavourites.map((recipe) => (
+              {yourFavourites.map((faborite) => (
                 <Card
-                  key={recipe._id}
-                  id={recipe._id}
-                  title={recipe.title}
-                  author={recipe.author.username}
-                  image={`http://localhost:5000/api/recipe/getRecipeImage/${recipe.image}`}
+                  key={faborite.recipe.id}
+                  id={faborite.recipe.id}
+                  title={faborite.recipe.title}
+                  // image={`http://localhost:5000/api/recipe/getRecipeImage/${recipe.image}`}
                 />
               ))}
             </div>

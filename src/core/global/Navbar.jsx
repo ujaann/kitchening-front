@@ -31,7 +31,7 @@ const TopBar = () => {
                 <summary>Cuisine</summary>
                 <ul className="p-2">
                   <li>
-                    <Link to="/allRecipe/nepali">Nepali</Link>
+                    <Link to="/allRecipe/italian">Italian</Link>
                   </li>
                   <li>
                     <Link to="/allRecipe/chinese">Chinese</Link>
@@ -65,7 +65,7 @@ const TopBar = () => {
               <summary>Cuisine</summary>
               <ul className=" text-spaceCadet">
                 <li>
-                  <Link to="/allRecipe/nepali">Nepali</Link>
+                  <Link to="/allRecipe/italian">Italian</Link>
                 </li>
                 <li>
                   <Link to="/allRecipe/chinese">Chinese</Link>
