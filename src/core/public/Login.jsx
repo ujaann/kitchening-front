@@ -2,16 +2,16 @@ import React, { useContext, useState } from "react";
 import Logo from "../../assets/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
 
 export const Login = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const handleLogin = async () => {
     // Replace this with your actual authentication logic
-    const response = await fetch("/api/auth/login", {
+    const response = await fetch("/api/user/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,12 +24,13 @@ export const Login = () => {
       login(data.token, username, data.role);
       navigate("/");
     } else {
-      alert("Invalid credentials");
+      toast.error("Login failed. Please check your credentials and try again.");
     }
   };
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-peach">
+      <ToastContainer/>
       <div>
         <img src={Logo} className="max-sm:hidden" />
       </div>

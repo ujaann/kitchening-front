@@ -7,7 +7,6 @@ import { AuthContext } from "../context/AuthContext";
 const TopBar = () => {
   const { authInfo, logout } = useContext(AuthContext);
   
-  
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -108,7 +107,9 @@ const TopBar = () => {
             {authInfo.token ? (
               <>
                 <li>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/profile">
+                  <span className="badge"> {authInfo.username} </span>
+                 Your Profile</Link>
                 </li>
                 <li>
                   <Link to="/your-recipes">Your Recipes</Link>

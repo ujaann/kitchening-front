@@ -5,26 +5,30 @@ import { Home } from "./core/public/Home";
 import { Login } from "./core/public/Login";
 import { AuthProvider } from "./core/context/AuthContext";
 import { Register } from "./core/public/Register";
-
 import TopBar from "./core/global/Navbar";
 import SingleRecipe from "./core/public/SingleRecipe";
 import { AllRecipe } from "./core/public/AllRecipe";
+import NotFound from "./core/public/NotFound";
+import { Favourites } from "./core/private/Favourites";
 
 function App() {
-  const privateRoutes = [];
+  const privateRoutes = [
+    { path: "/favourites", element: <Favourites /> },
+    
+  ];
   const publicRoutes = [
     { path: "/", element: <Home /> },
     { path: "/login", element: <Login /> },
     { path: "/register", element: <Register /> },
-    {path: "/allRecipe/:cuisine", element: <AllRecipe />},
-    {path: "/allRecipe/", element: <AllRecipe />},
-    
+    { path: "/allRecipe/:cuisine", element: <AllRecipe /> },
+    { path: "/allRecipe/", element: <AllRecipe /> },
     { path: "/recipe/:recipeId", element: <SingleRecipe /> },
   ];
 
   const isAuthenticated = false;
   const routes = isAuthenticated ? privateRoutes.concat(publicRoutes) : publicRoutes;
-
+  console.log(routes);
+  
   return (
     <>
       <AuthProvider>
@@ -34,6 +38,7 @@ function App() {
             {routes.map((route, index) => (
               <Route key={index} path={route.path} element={route.element} />
             ))}
+            <Route path="*" element={<NotFound />} /> {/* Add this line */}
           </Routes>
         </BrowserRouter>
       </AuthProvider>
