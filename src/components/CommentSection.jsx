@@ -1,3 +1,4 @@
+import { Loader } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 const CommentSection = ({ recipeId }) => {
@@ -25,7 +26,7 @@ const CommentSection = ({ recipeId }) => {
   }, [recipeId]);
 
   if (loading) {
-    return <div>Loading comments...</div>;
+    return <div className='flex  w-screen h-screen '><Loader className="self-center size-30"/></div>;
   }
 
   if (error) {

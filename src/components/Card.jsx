@@ -10,7 +10,7 @@ export const Card = ({ title, image, author, id }) => {
     };
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side bg-papayaWhip shadow-xl">
             <figure>
                 <img
                     src={image}

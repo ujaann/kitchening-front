@@ -1,6 +1,7 @@
 import { AlignJustify } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import profile from "../../assets/profile.png";
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
@@ -39,7 +40,7 @@ const TopBar = () => {
                     <Link to="/allRecipe/thai">Thai</Link>
                   </li>
                   <li>
-                    <Link to="/allRecipe/nepakorean">Korean</Link>
+                    <Link to="/allRecipe/american">American</Link>
                   </li>
                 </ul>
               </details>
@@ -62,7 +63,7 @@ const TopBar = () => {
           <li>
             <details>
               <summary>Cuisine</summary>
-              <ul className="p-2 text-spaceCadet">
+              <ul className=" text-spaceCadet">
                 <li>
                   <Link to="/allRecipe/nepali">Nepali</Link>
                 </li>
@@ -73,7 +74,7 @@ const TopBar = () => {
                   <Link to="/allRecipe/thai">Thai</Link>
                 </li>
                 <li>
-                  <Link to="/allRecipe/nepakorean">Korean</Link>
+                  <Link to="/allRecipe/american">American</Link>
                 </li>
               </ul>
             </details>
@@ -96,7 +97,7 @@ const TopBar = () => {
             <div className="w-10 rounded-full">
               <img
                 alt="Profile"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                src={profile}
               />
             </div>
           </div>

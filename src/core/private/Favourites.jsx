@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+import { Loader, Search } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { Card } from "../../components/Card";
 import { AuthContext } from "../context/AuthContext";
@@ -29,7 +29,7 @@ export const Favourites = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className='flex  w-screen h-screen '><Loader className="self-center size-30"/></div>;
   }
 
   if (error) {
