@@ -30,16 +30,16 @@ const TopBar = () => {
                 <summary>Cuisine</summary>
                 <ul className="p-2">
                   <li>
-                    <Link to="/cuisine/nepali">Nepali</Link>
+                    <Link to="/allRecipe/nepali">Nepali</Link>
                   </li>
                   <li>
-                    <Link to="/cuisine/chinese">Chinese</Link>
+                    <Link to="/allRecipe/chinese">Chinese</Link>
                   </li>
                   <li>
-                    <Link to="/cuisine/thai">Thai</Link>
+                    <Link to="/allRecipe/thai">Thai</Link>
                   </li>
                   <li>
-                    <Link to="/cuisine/nepakorean">Korean</Link>
+                    <Link to="/allRecipe/nepakorean">Korean</Link>
                   </li>
                 </ul>
               </details>
@@ -64,16 +64,16 @@ const TopBar = () => {
               <summary>Cuisine</summary>
               <ul className="p-2 text-spaceCadet">
                 <li>
-                  <Link to="/cuisine/nepali">Nepali</Link>
+                  <Link to="/allRecipe/nepali">Nepali</Link>
                 </li>
                 <li>
-                  <Link to="/cuisine/chinese">Chinese</Link>
+                  <Link to="/allRecipe/chinese">Chinese</Link>
                 </li>
                 <li>
-                  <Link to="/cuisine/thai">Thai</Link>
+                  <Link to="/allRecipe/thai">Thai</Link>
                 </li>
                 <li>
-                  <Link to="/cuisine/nepakorean">Korean</Link>
+                  <Link to="/allRecipe/nepakorean">Korean</Link>
                 </li>
               </ul>
             </details>
