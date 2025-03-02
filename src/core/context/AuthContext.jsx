@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [authInfo, setAuthInfo] = useState(() => {
     const savedAuthInfo = localStorage.getItem("authInfo");
-    return savedAuthInfo ? JSON.parse(savedAuthInfo) : { token: null, username: null, role: null };
+    return savedAuthInfo ? JSON.parse(savedAuthInfo) : { token: null, username: null, userId: null };
   });
 
   
@@ -17,12 +17,12 @@ export const AuthProvider = ({ children }) => {
     }
   }, [authInfo]);
 
-  const login = (token, username, role) => {
-    setAuthInfo({ token, username, role });
+  const login = (token, username, userId) => {
+    setAuthInfo({ token, username, userId });
   };
 
   const logout = () => {
-    setAuthInfo({ token: null, username: null, role: null });
+    setAuthInfo({ token: null, username: null, userId: null });
   };
 
   return (

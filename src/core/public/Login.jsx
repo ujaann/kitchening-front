@@ -21,7 +21,7 @@ export const Login = () => {
 
     if (response.ok) {
       const data = await response.json();
-      login(data.token, username, data.role);
+      login(data.token, username, data.userId);
       navigate("/");
     } else {
       toast.error("Login failed. Please check your credentials and try again.");
